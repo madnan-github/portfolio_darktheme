@@ -1,113 +1,116 @@
-import Image from "next/image";
+import { Button } from "@/components/ui/button"
+import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
+import { Badge } from "@/components/ui/badge"
+import { ArrowRight, Code, Briefcase, Lightbulb, Mail, User } from "lucide-react"
+import Link from "next/link"
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 w-full max-w-5xl items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">src/app/page.tsx</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:size-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{" "}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
+    <div className="space-y-20">
+      <section className="py-20 text-center">
+        <h1 className="text-4xl font-bold mb-4">Welcome to My Portfolio</h1>
+        <p className="text-xl mb-8">I'm a passionate developer creating amazing web experiences</p>
+        <Button asChild>
+          <Link href="/contact">Get in Touch <ArrowRight className="ml-2 h-4 w-4" /></Link>
+        </Button>
+      </section>
+
+      <section className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+        {[
+          { title: "About Me", icon: User, link: "/about" },
+          { title: "My Projects", icon: Code, link: "/projects" },
+          { title: "My Skills", icon: Lightbulb, link: "/skills" },
+          { title: "Work Experience", icon: Briefcase, link: "/about#experience" },
+          { title: "Education", icon: User, link: "/about#education" },
+          { title: "Contact", icon: Mail, link: "/contact" },
+        ].map((item, index) => (
+          <Card key={index}>
+            <CardHeader>
+              <CardTitle className="flex items-center">
+                <item.icon className="mr-2 h-5 w-5" />
+                {item.title}
+              </CardTitle>
+            </CardHeader>
+            <CardContent>
+              <p>Learn more about {item.title.toLowerCase()}</p>
+            </CardContent>
+            <CardFooter>
+              <Button asChild variant="outline">
+                <Link href={item.link}>View <ArrowRight className="ml-2 h-4 w-4" /></Link>
+              </Button>
+            </CardFooter>
+          </Card>
+        ))}
+      </section>
+
+      <section className="max-w-3xl mx-auto text-center">
+        <h2 className="text-3xl font-bold mb-4">Featured Project</h2>
+        <Card>
+          <CardHeader>
+            <CardTitle>Project Name</CardTitle>
+            <CardDescription>A brief description of the project</CardDescription>
+          </CardHeader>
+          <CardContent>
+            <p className="mb-4">This is a more detailed explanation of the project, its features, and technologies used.</p>
+            <div className="flex flex-wrap justify-center gap-2">
+              <Badge>React</Badge>
+              <Badge>Next.js</Badge>
+              <Badge>TypeScript</Badge>
+            </div>
+          </CardContent>
+          <CardFooter>
+            <Button asChild>
+              <Link href="/projects">View Project</Link>
+            </Button>
+          </CardFooter>
+        </Card>
+      </section>
+
+      <section>
+        <h2 className="text-3xl font-bold mb-4 text-center">Latest Blog Posts</h2>
+        <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+          {[1, 2, 3].map((post) => (
+            <Card key={post}>
+              <CardHeader>
+                <CardTitle>Blog Post Title {post}</CardTitle>
+                <CardDescription>Posted on {new Date().toLocaleDateString()}</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <p>A brief excerpt from the blog post...</p>
+              </CardContent>
+              <CardFooter>
+                <Button variant="outline">Read More</Button>
+              </CardFooter>
+            </Card>
+          ))}
         </div>
-      </div>
+      </section>
 
-      <div className="relative z-[-1] flex place-items-center before:absolute before:h-[300px] before:w-full before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-full after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 sm:before:w-[480px] sm:after:w-[240px] before:lg:h-[360px]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
+      <section className="text-center">
+        <h2 className="text-3xl font-bold mb-4">Let's Work Together</h2>
+        <p className="mb-8">I'm always open to new opportunities and collaborations</p>
+        <Button asChild size="lg">
+          <Link href="/contact">Contact Me</Link>
+        </Button>
+      </section>
 
-      <div className="mb-32 grid text-center lg:mb-0 lg:w-full lg:max-w-5xl lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Docs{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-sm opacity-50">
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Learn{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-sm opacity-50">
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Templates{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-sm opacity-50">
-            Explore starter templates for Next.js.
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Deploy{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-balance text-sm opacity-50">
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
-  );
+      <section>
+        <h2 className="text-3xl font-bold mb-4 text-center">Testimonials</h2>
+        <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+          {[1, 2, 3].map((testimonial) => (
+            <Card key={testimonial}>
+              <CardHeader>
+                <CardTitle>Client Name {testimonial}</CardTitle>
+                <CardDescription>Company {testimonial}</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <p>"A glowing testimonial about your work and professionalism..."</p>
+              </CardContent>
+            </Card>
+          ))}
+        </div>
+      </section>
+    </div>
+  )
 }
+
