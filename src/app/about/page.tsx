@@ -13,7 +13,7 @@ export default function About() {
         <h2 className="text-3xl font-bold mb-4">My Story</h2>
         <Card>
           <CardContent className="pt-6">
-            <p>Here's where you can write a detailed paragraph about your background, how you got into web development, and what drives your passion for creating digital experiences.</p>
+            <p>Here&apos;s where you can write a detailed paragraph about your background, how you got into web development, and what drives your passion for creating digital experiences.</p>
           </CardContent>
         </Card>
       </section>

@@ -9,7 +9,7 @@ export default function Home() {
     <div className="space-y-20">
       <section className="py-20 text-center">
         <h1 className="text-4xl font-bold mb-4">Welcome to My Portfolio</h1>
-        <p className="text-xl mb-8">I'm a passionate developer creating amazing web experiences</p>
+        <p className="text-xl mb-8">I&apos;m a passionate developer creating amazing web experiences</p>
         <Button asChild>
           <Link href="/contact">Get in Touch <ArrowRight className="ml-2 h-4 w-4" /></Link>
         </Button>
@@ -87,8 +87,8 @@ export default function Home() {
       </section>
 
       <section className="text-center">
-        <h2 className="text-3xl font-bold mb-4">Let's Work Together</h2>
-        <p className="mb-8">I'm always open to new opportunities and collaborations</p>
+        <h2 className="text-3xl font-bold mb-4">Let&apos;s Work Together</h2>
+        <p className="mb-8">I&apos;m always open to new opportunities and collaborations</p>
         <Button asChild size="lg">
           <Link href="/contact">Contact Me</Link>
         </Button>
@@ -104,7 +104,7 @@ export default function Home() {
                 <CardDescription>Company {testimonial}</CardDescription>
               </CardHeader>
               <CardContent>
-                <p>"A glowing testimonial about your work and professionalism..."</p>
+                <p>A glowing testimonial about your work and professionalism...</p>
               </CardContent>
             </Card>
           ))}

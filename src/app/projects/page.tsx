@@ -142,7 +142,7 @@ export default function Projects() {
                 <CardDescription>Project: Project Name</CardDescription>
               </CardHeader>
               <CardContent>
-                <p>"A testimonial from the client about the project's success and your contribution..."</p>
+                <p>A testimonial from the client about the project&apos;s success and your contribution...</p>
               </CardContent>
             </Card>
           ))}

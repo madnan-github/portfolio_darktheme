@@ -125,7 +125,7 @@ export default function Skills() {
             <CardTitle>Continuous Learning</CardTitle>
           </CardHeader>
           <CardContent>
-            <p className="mb-4">Describe your approach to staying up-to-date with the latest technologies and your commitment to continuous learning. Mention any recent courses, workshops, or conferences you've attended.</p>
+            <p className="mb-4">Describe your approach to staying up-to-date with the latest technologies and your commitment to continuous learning. Mention any recent courses, workshops, or conferences you&apos;ve attended.</p>
             <div className="flex flex-wrap gap-2">
               <Badge variant="outline">Online Courses</Badge>
               <Badge variant="outline">Tech Conferences</Badge>

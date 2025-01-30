@@ -17,7 +17,7 @@ export default function Contact() {
         <Card>
           <CardHeader>
             <CardTitle>Send a Message</CardTitle>
-            <CardDescription>Fill out the form below and I'll get back to you as soon as possible.</CardDescription>
+            <CardDescription>Fill out the form below and I&apos;ll get back to you as soon as possible.</CardDescription>
           </CardHeader>
           <CardContent>
             <form className="space-y-4">
@@ -96,8 +96,8 @@ export default function Contact() {
       </section>
 
       <section className="text-center">
-        <h2 className="text-3xl font-bold mb-4">Let's Work Together</h2>
-        <p className="mb-8">I'm excited to hear about your project and how we can collaborate to bring your ideas to life.</p>
+        <h2 className="text-3xl font-bold mb-4">Let&apos;s Work Together</h2>
+        <p className="mb-8">I&apos;m excited to hear about your project and how we can collaborate to bring your ideas to life.</p>
         <Button asChild size="lg">
           <Link href="#top">Get in Touch</Link>
         </Button>
